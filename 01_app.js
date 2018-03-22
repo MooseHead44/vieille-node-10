@@ -9,6 +9,7 @@ const http = require('http');
 const server = http.createServer(app);
 const io = require('./mes_modules/chat_socket').listen(server);
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 /* on associe le moteur de vue au module «ejs» */
 app.use(express.static('public'));
 const i18n = require('i18n');
