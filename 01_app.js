@@ -163,3 +163,7 @@ if (err) return console.log(err)
  res.send(JSON.stringify(resultat))  // redirige vers la route qui affiche la collection
  })
 })
+
+app.get('/chat', (req, res) => {
+        res.render('socket_vue.ejs');
+})
