@@ -151,19 +151,19 @@ app.post('/ajax_modifier', (req,res) => {
 })
 
 app.post('/ajax_ajouter', (req,res) => {  
- db.collection('adresse').save(req.body, (err, result) => {
- if (err) return console.log(err)
-    res.send(JSON.stringify(req.body))
- })
+	db.collection('adresse').save(req.body, (err, result) => {
+	if (err) return console.log(err)
+		res.send(JSON.stringify(req.body))
+	})
 })
 
 app.post('/ajax_detruire/', (req, res) => {
- db.collection('adresse').findOneAndDelete({"_id": ObjectID(req.body._id)}, (err, resultat) => {
-if (err) return console.log(err)
- res.send(JSON.stringify(resultat))  // redirige vers la route qui affiche la collection
- })
+	db.collection('adresse').findOneAndDelete({"_id": ObjectID(req.body._id)}, (err, resultat) => {
+	if (err) return console.log(err)
+ 	res.send(JSON.stringify(resultat))  // redirige vers la route qui affiche la collection
+ 	})
 })
 
 app.get('/chat', (req, res) => {
-        res.render('socket_vue.ejs');
+    res.render('socket_vue.ejs');
 })
